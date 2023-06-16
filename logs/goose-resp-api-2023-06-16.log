@@ -1,0 +1,1623 @@
+2023-06-16 05:48:51 [debug]:  - running at http://:::9120
+2023-06-16 05:49:03 [debug]:  - running at http://:::9120
+2023-06-16 05:50:09 [debug]:  - running at http://:::9120
+2023-06-16 06:01:23 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:01:23 [debug]:  - Connection acquired from connection pool...Connection 140 acquired
+2023-06-16 06:01:23 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Accounts(AccountId,Name,Email,AppSecret,Website,IsActive)
+        VALUES(UNHEX(REPLACE(UUID(),"-","")),'John's Account','john.doe@example.com',
+        UNHEX(REPLACE(UUID(),"-","")),'https://www.example.com',1);
+2023-06-16 06:01:23 [error]:  - ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 's Account','john.doe@example.com',
+        UNHEX(REPLACE(UUID(),"-","")),'htt...' at line 2
+2023-06-16 06:01:23 [debug]:  - Connection 140 is released back to the pool
+2023-06-16 06:04:11 [debug]:  - running at http://:::9120
+2023-06-16 06:05:16 [debug]:  - running at http://:::9120
+2023-06-16 06:05:21 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:05:21 [debug]:  - Connection acquired from connection pool...Connection 141 acquired
+2023-06-16 06:05:21 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Accounts(AccountId,Name,Email,AppSecret,Website,IsActive)
+        VALUES(UNHEX(REPLACE(UUID(),"-","")),"John's Account","john.doe@example.com",
+        UNHEX(REPLACE(UUID(),"-","")),"https://www.example.com",1);
+2023-06-16 06:05:21 [error]:  - ER_BAD_FIELD_ERROR: Unknown column 'AppSecret' in 'field list'
+2023-06-16 06:05:21 [debug]:  - Connection 141 is released back to the pool
+2023-06-16 06:05:50 [debug]:  - running at http://:::9120
+2023-06-16 06:05:55 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:05:55 [debug]:  - Connection acquired from connection pool...Connection 148 acquired
+2023-06-16 06:05:55 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Accounts(AccountId,Name,Email,AppSecretId,Website,IsActive)
+        VALUES(UNHEX(REPLACE(UUID(),"-","")),"John's Account","john.doe@example.com",
+        UNHEX(REPLACE(UUID(),"-","")),"https://www.example.com",1);
+2023-06-16 06:05:55 [error]:  - ER_BAD_FIELD_ERROR: Unknown column 'IsActive' in 'field list'
+2023-06-16 06:05:55 [debug]:  - Connection 148 is released back to the pool
+2023-06-16 06:06:34 [debug]:  - Connection acquired from connection pool...Connection 148 acquired
+2023-06-16 06:06:34 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Accounts(AccountId,Name,Email,AppSecretId,Website,IsActive)
+        VALUES(UNHEX(REPLACE(UUID(),"-","")),"John's Account","john.doe@example.com",
+        UNHEX(REPLACE(UUID(),"-","")),"https://www.example.com",1);
+2023-06-16 06:06:34 [debug]:  - Connection 148 is released back to the pool
+2023-06-16 06:07:24 [debug]:  - running at http://:::9120
+2023-06-16 06:08:16 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:08:16 [debug]:  - Connection acquired from connection pool...Connection 165 acquired
+2023-06-16 06:08:16 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 06:08:16 [debug]:  - Connection 165 is released back to the pool
+2023-06-16 06:09:55 [debug]:  - Connection acquired from connection pool...Connection 165 acquired
+2023-06-16 06:09:55 [debug]:  - AssetServiceDAO :: Delete Account ,Query : UPDATE Accounts SET IsActive = 0 WHERE AccountId = UNHEX("f24e2e3e-0c0b-11ee-855e-28d244d1c460")
+2023-06-16 06:09:55 [debug]:  - Connection 165 is released back to the pool
+2023-06-16 06:10:04 [debug]:  - Connection acquired from connection pool...Connection 165 acquired
+2023-06-16 06:10:05 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Accounts(AccountId,Name,Email,AppSecretId,Website,IsActive)
+        VALUES(UNHEX(REPLACE(UUID(),"-","")),"John's Account","john.doe@example.com",
+        UNHEX(REPLACE(UUID(),"-","")),"https://www.example.com",1);
+2023-06-16 06:10:05 [debug]:  - Connection 165 is released back to the pool
+2023-06-16 06:10:09 [debug]:  - Connection acquired from connection pool...Connection 165 acquired
+2023-06-16 06:10:09 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 06:10:09 [debug]:  - Connection 165 is released back to the pool
+2023-06-16 06:12:53 [debug]:  - running at http://:::9120
+2023-06-16 06:13:00 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:13:00 [debug]:  - Connection acquired from connection pool...Connection 174 acquired
+2023-06-16 06:13:00 [debug]:  - AssetServiceDAO :: Delete Account ,Query : UPDATE Accounts SET IsActive = 0 WHERE LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) = 'f24e2e3e-0c0b-11ee-855e-28d244d1c460')
+2023-06-16 06:13:00 [error]:  - ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 3
+2023-06-16 06:13:00 [debug]:  - Connection 174 is released back to the pool
+2023-06-16 06:13:00 [error]:  - []
+2023-06-16 06:13:00 [error]:  - []
+2023-06-16 06:13:37 [debug]:  - running at http://:::9120
+2023-06-16 06:13:59 [debug]:  - running at http://:::9120
+2023-06-16 06:14:03 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:14:03 [debug]:  - Connection acquired from connection pool...Connection 175 acquired
+2023-06-16 06:14:03 [debug]:  - AssetServiceDAO :: Delete Account ,Query : UPDATE Accounts SET IsActive = 0 WHERE LOWER(CONCAT(LEFT(HEX(AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(AccountId), 13, 4), '-',MID(HEX(AccountId), 17, 4), '-',
+    RIGHT(HEX(AccountId), 12)))) = 'f24e2e3e-0c0b-11ee-855e-28d244d1c460'
+2023-06-16 06:14:03 [error]:  - ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') = 'f24e2e3e-0c0b-11ee-855e-28d244d1c460'' at line 3
+2023-06-16 06:14:03 [debug]:  - Connection 175 is released back to the pool
+2023-06-16 06:14:03 [error]:  - []
+2023-06-16 06:14:03 [error]:  - []
+2023-06-16 06:15:15 [debug]:  - running at http://:::9120
+2023-06-16 06:16:11 [debug]:  - running at http://:::9120
+2023-06-16 06:16:22 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:16:22 [debug]:  - Connection acquired from connection pool...Connection 176 acquired
+2023-06-16 06:16:22 [debug]:  - AssetServiceDAO :: Delete Account ,Query : UPDATE Accounts SET IsActive = 0 WHERE LOWER(CONCAT(LEFT(HEX(AccountId), 8), '-',MID(HEX(AccountId), 9, 4), 
+    '-',MID(HEX(AccountId), 13, 4), '-',MID(HEX(AccountId), 17, 4), '-',
+    RIGHT(HEX(AccountId), 12)))) = 'f24e2e3e-0c0b-11ee-855e-28d244d1c460'
+2023-06-16 06:16:22 [error]:  - ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') = 'f24e2e3e-0c0b-11ee-855e-28d244d1c460'' at line 3
+2023-06-16 06:16:22 [debug]:  - Connection 176 is released back to the pool
+2023-06-16 06:16:22 [error]:  - []
+2023-06-16 06:16:22 [error]:  - []
+2023-06-16 06:16:38 [debug]:  - running at http://:::9120
+2023-06-16 06:16:48 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:16:48 [debug]:  - Connection acquired from connection pool...Connection 177 acquired
+2023-06-16 06:16:48 [debug]:  - AssetServiceDAO :: Delete Account ,Query : UPDATE Accounts SET IsActive = 0 WHERE LOWER(CONCAT(LEFT(HEX(AccountId), 8), '-',MID(HEX(AccountId), 9, 4), 
+    '-',MID(HEX(AccountId), 13, 4), '-',MID(HEX(AccountId), 17, 4), '-',
+    RIGHT(HEX(AccountId), 12)))) = f24e2e3e-0c0b-11ee-855e-28d244d1c460
+2023-06-16 06:16:48 [error]:  - ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') = f24e2e3e-0c0b-11ee-855e-28d244d1c460' at line 3
+2023-06-16 06:16:48 [debug]:  - Connection 177 is released back to the pool
+2023-06-16 06:16:48 [error]:  - []
+2023-06-16 06:16:48 [error]:  - []
+2023-06-16 06:19:01 [debug]:  - running at http://:::9120
+2023-06-16 06:19:05 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:19:05 [debug]:  - Connection acquired from connection pool...Connection 178 acquired
+2023-06-16 06:19:05 [debug]:  - AssetServiceDAO :: Delete Account ,Query : UPDATE Accounts SET IsActive = 0 WHERE LOWER(CONCAT(LEFT(HEX(AccountId), 8), '-',MID(HEX(AccountId), 9, 4), 
+    '-',MID(HEX(AccountId), 13, 4), '-',MID(HEX(AccountId), 17, 4), '-',
+    RIGHT(HEX(AccountId), 12))) = f24e2e3e-0c0b-11ee-855e-28d244d1c460
+2023-06-16 06:19:05 [error]:  - ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'd244d1c460' at line 3
+2023-06-16 06:19:05 [debug]:  - Connection 178 is released back to the pool
+2023-06-16 06:19:05 [error]:  - []
+2023-06-16 06:19:05 [error]:  - []
+2023-06-16 06:22:00 [debug]:  - running at http://:::9120
+2023-06-16 06:22:05 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:22:05 [debug]:  - Connection acquired from connection pool...Connection 179 acquired
+2023-06-16 06:22:05 [debug]:  - AssetServiceDAO :: Delete Account ,Query : UPDATE Accounts SET IsActive = 0 WHERE LOWER(CONCAT(LEFT(HEX(AccountId), 8), '-',MID(HEX(AccountId), 9, 4), 
+    '-',MID(HEX(AccountId), 13, 4), '-',MID(HEX(AccountId), 17, 4), '-',
+    RIGHT(HEX(AccountId), 12))) = f24e2e3e-0c0b-11ee-855e-28d244d1c460
+2023-06-16 06:22:05 [error]:  - ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'd244d1c460' at line 3
+2023-06-16 06:22:05 [debug]:  - Connection 179 is released back to the pool
+2023-06-16 06:22:05 [error]:  - []
+2023-06-16 06:22:05 [error]:  - []
+2023-06-16 06:23:09 [debug]:  - running at http://:::9120
+2023-06-16 06:23:17 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:23:17 [debug]:  - Connection acquired from connection pool...Connection 180 acquired
+2023-06-16 06:23:17 [debug]:  - AssetServiceDAO :: Delete Account ,Query : UPDATE Accounts SET IsActive = 0 WHERE AccountId = f24e2e3e-0c0b-11ee-855e-28d244d1c460
+2023-06-16 06:23:17 [error]:  - ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'd244d1c460' at line 1
+2023-06-16 06:23:17 [debug]:  - Connection 180 is released back to the pool
+2023-06-16 06:23:17 [error]:  - []
+2023-06-16 06:23:17 [error]:  - []
+2023-06-16 06:24:38 [debug]:  - running at http://:::9120
+2023-06-16 06:24:43 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:24:43 [debug]:  - Connection acquired from connection pool...Connection 181 acquired
+2023-06-16 06:24:43 [debug]:  - AssetServiceDAO :: Delete Account ,Query : UPDATE Accounts SET IsActive = 0 WHERE AccountId = 'f24e2e3e-0c0b-11ee-855e-28d244d1c460'
+2023-06-16 06:24:43 [debug]:  - Connection 181 is released back to the pool
+2023-06-16 06:24:55 [debug]:  - running at http://:::9120
+2023-06-16 06:24:59 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:24:59 [debug]:  - Connection acquired from connection pool...Connection 182 acquired
+2023-06-16 06:24:59 [debug]:  - AssetServiceDAO :: Delete Account ,Query : UPDATE Accounts SET IsActive = 0 WHERE LOWER(CONCAT(LEFT(HEX(AccountId), 8), '-',MID(HEX(AccountId), 9, 4), 
+    '-',MID(HEX(AccountId), 13, 4), '-',MID(HEX(AccountId), 17, 4), '-',
+    RIGHT(HEX(AccountId), 12))) = 'f24e2e3e-0c0b-11ee-855e-28d244d1c460'
+2023-06-16 06:24:59 [debug]:  - Connection 182 is released back to the pool
+2023-06-16 06:25:22 [debug]:  - Connection acquired from connection pool...Connection 182 acquired
+2023-06-16 06:25:22 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 06:25:22 [debug]:  - Connection 182 is released back to the pool
+2023-06-16 06:28:40 [debug]:  - Connection acquired from connection pool...Connection 182 acquired
+2023-06-16 06:28:40 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 06:28:40 [debug]:  - Connection 182 is released back to the pool
+2023-06-16 06:28:40 [debug]:  - Connection acquired from connection pool...Connection 182 acquired
+2023-06-16 06:28:40 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Destinations(Url,Method,Headers,AccountId)
+        VALUES('https://api.example.com/endpoint','POST',
+        '{"APP_ID":"1234APPID1234","APP_SECRET":"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s","ACTION":"user.update","Content-Type":"application/json","Accept":"*/*"}',UNHEX(REPLACE("6fc73267-0c0c-11ee-855e-28d244d1c460","-","")));
+2023-06-16 06:28:40 [error]:  - ER_BAD_FIELD_ERROR: Unknown column 'AccountId' in 'field list'
+2023-06-16 06:28:40 [debug]:  - Connection 182 is released back to the pool
+2023-06-16 06:28:40 [error]:  - []
+2023-06-16 06:28:40 [error]:  - []
+2023-06-16 06:29:47 [debug]:  - running at http://:::9120
+2023-06-16 06:29:51 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:29:51 [debug]:  - Connection acquired from connection pool...Connection 203 acquired
+2023-06-16 06:29:51 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 06:29:51 [debug]:  - Connection 203 is released back to the pool
+2023-06-16 06:29:51 [debug]:  - Connection acquired from connection pool...Connection 203 acquired
+2023-06-16 06:29:51 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Destinations(Url,Method,Headers,FK_AccountId)
+        VALUES('https://api.example.com/endpoint','POST',
+        '{"APP_ID":"1234APPID1234","APP_SECRET":"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s","ACTION":"user.update","Content-Type":"application/json","Accept":"*/*"}',UNHEX(REPLACE("6fc73267-0c0c-11ee-855e-28d244d1c460","-","")));
+2023-06-16 06:29:51 [debug]:  - Connection 203 is released back to the pool
+2023-06-16 06:41:11 [debug]:  - running at http://:::9120
+2023-06-16 06:42:24 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:42:24 [debug]:  - Connection acquired from connection pool...Connection 204 acquired
+2023-06-16 06:42:24 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.HTTPMethod AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.AccountId = ACC.AccountId
+        WHERE 1;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.AccountId = ACC.AccountId
+          WHERE 1) AS TBL;
+2023-06-16 06:42:24 [error]:  - ER_BAD_FIELD_ERROR: Unknown column 'DEST.HTTPMethod' in 'field list'
+2023-06-16 06:42:24 [debug]:  - Connection 204 is released back to the pool
+2023-06-16 06:42:24 [error]:  - []
+2023-06-16 06:42:24 [error]:  - []
+2023-06-16 06:43:03 [debug]:  - running at http://:::9120
+2023-06-16 06:43:06 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 06:43:06 [debug]:  - Connection acquired from connection pool...Connection 205 acquired
+2023-06-16 06:43:06 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.AccountId = ACC.AccountId
+        WHERE 1;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.AccountId = ACC.AccountId
+          WHERE 1) AS TBL;
+2023-06-16 06:43:06 [error]:  - ER_BAD_FIELD_ERROR: Unknown column 'DEST.AccountId' in 'on clause'
+2023-06-16 06:43:06 [debug]:  - Connection 205 is released back to the pool
+2023-06-16 06:43:06 [error]:  - []
+2023-06-16 06:43:06 [error]:  - []
+2023-06-16 07:55:12 [debug]:  - running at http://:::9120
+2023-06-16 07:55:16 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 07:55:16 [debug]:  - Connection acquired from connection pool...Connection 234 acquired
+2023-06-16 07:55:16 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.AccountId = ACC.AccountId
+          WHERE 1) AS TBL;
+2023-06-16 07:55:16 [error]:  - ER_BAD_FIELD_ERROR: Unknown column 'DEST.AccountId' in 'on clause'
+2023-06-16 07:55:16 [debug]:  - Connection 234 is released back to the pool
+2023-06-16 07:55:16 [error]:  - []
+2023-06-16 07:55:16 [error]:  - []
+2023-06-16 07:55:36 [debug]:  - running at http://:::9120
+2023-06-16 07:55:45 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 07:55:45 [debug]:  - Connection acquired from connection pool...Connection 235 acquired
+2023-06-16 07:55:45 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1) AS TBL;
+2023-06-16 07:55:45 [debug]:  - Connection 235 is released back to the pool
+2023-06-16 07:57:09 [debug]:  - running at http://:::9120
+2023-06-16 07:57:13 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 07:57:13 [debug]:  - Connection acquired from connection pool...Connection 236 acquired
+2023-06-16 07:57:13 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1) AS TBL;
+2023-06-16 07:57:13 [debug]:  - Connection 236 is released back to the pool
+2023-06-16 08:02:21 [debug]:  - running at http://:::9120
+2023-06-16 08:04:22 [debug]:  - running at http://:::9120
+2023-06-16 08:05:36 [debug]:  - running at http://:::9120
+2023-06-16 08:07:59 [debug]:  - running at http://:::9120
+2023-06-16 08:08:04 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 08:08:04 [debug]:  - Connection acquired from connection pool...Connection 241 acquired
+2023-06-16 08:08:04 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE appSecretToken = '6fc73267-0c0c-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 08:08:04 [error]:  - ER_BAD_FIELD_ERROR: Unknown column 'appSecretToken' in 'where clause'
+2023-06-16 08:08:04 [debug]:  - Connection 241 is released back to the pool
+2023-06-16 08:08:04 [error]:  - []
+2023-06-16 08:08:04 [error]:  - []
+2023-06-16 08:09:33 [debug]:  - running at http://:::9120
+2023-06-16 08:10:23 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 08:10:23 [debug]:  - Connection acquired from connection pool...Connection 242 acquired
+2023-06-16 08:10:23 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE appSecretToken = '6fc73267-0c0c-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 08:10:23 [error]:  - ER_BAD_FIELD_ERROR: Unknown column 'appSecretToken' in 'where clause'
+2023-06-16 08:10:23 [debug]:  - Connection 242 is released back to the pool
+2023-06-16 08:10:23 [error]:  - []
+2023-06-16 08:10:23 [error]:  - []
+2023-06-16 08:11:03 [debug]:  - running at http://:::9120
+2023-06-16 08:12:49 [debug]:  - running at http://:::9120
+2023-06-16 08:12:53 [debug]:  - running at http://:::9120
+2023-06-16 08:12:58 [debug]:  - running at http://:::9120
+2023-06-16 08:13:24 [debug]:  - running at http://:::9120
+2023-06-16 08:13:55 [debug]:  - running at http://:::9120
+2023-06-16 08:13:58 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 08:13:58 [debug]:  - Connection acquired from connection pool...Connection 243 acquired
+2023-06-16 08:13:58 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE appSecretToken = '6fc73267-0c0c-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 08:13:58 [error]:  - ER_BAD_FIELD_ERROR: Unknown column 'appSecretToken' in 'where clause'
+2023-06-16 08:13:58 [debug]:  - Connection 243 is released back to the pool
+2023-06-16 08:13:58 [error]:  - []
+2023-06-16 08:13:58 [error]:  - []
+2023-06-16 08:14:42 [debug]:  - running at http://:::9120
+2023-06-16 08:14:45 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 08:14:45 [debug]:  - Connection acquired from connection pool...Connection 244 acquired
+2023-06-16 08:14:45 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE ACC.AccountId = '6fc73267-0c0c-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 08:14:45 [debug]:  - Connection 244 is released back to the pool
+2023-06-16 08:14:45 [error]:  - {}
+2023-06-16 08:14:45 [error]:  - {}
+2023-06-16 08:16:15 [debug]:  - running at http://:::9120
+2023-06-16 08:16:18 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 08:16:18 [debug]:  - Connection acquired from connection pool...Connection 245 acquired
+2023-06-16 08:16:18 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE ACC.AccountId = '6fc73267-0c0c-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 08:16:18 [debug]:  - Connection 245 is released back to the pool
+2023-06-16 08:16:18 [error]:  - {}
+2023-06-16 08:16:18 [error]:  - {}
+2023-06-16 08:17:13 [debug]:  - running at http://:::9120
+2023-06-16 08:17:15 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 08:17:15 [debug]:  - Connection acquired from connection pool...Connection 246 acquired
+2023-06-16 08:17:15 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE ACC.AccountId = '6fc73267-0c0c-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 08:17:15 [debug]:  - Connection 246 is released back to the pool
+2023-06-16 08:17:15 [error]:  - {}
+2023-06-16 08:17:15 [error]:  - {}
+2023-06-16 08:17:54 [debug]:  - running at http://:::9120
+2023-06-16 08:17:57 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 08:17:57 [debug]:  - Connection acquired from connection pool...Connection 247 acquired
+2023-06-16 08:17:57 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) = '6fc73267-0c0c-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 08:17:57 [debug]:  - Connection 247 is released back to the pool
+2023-06-16 08:17:57 [debug]:  - Connection acquired from connection pool...Connection 247 acquired
+2023-06-16 08:17:57 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.HTTPMethod AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.AccountId = ACC.AccountId
+        WHERE 1 AND accountId = '6fc73267-0c0c-11ee-855e-28d244d1c460';
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.AccountId = ACC.AccountId
+          WHERE 1 AND accountId = '6fc73267-0c0c-11ee-855e-28d244d1c460') AS TBL;
+2023-06-16 08:17:57 [error]:  - ER_BAD_FIELD_ERROR: Unknown column 'DEST.HTTPMethod' in 'field list'
+2023-06-16 08:17:57 [debug]:  - Connection 247 is released back to the pool
+2023-06-16 08:17:57 [error]:  - []
+2023-06-16 08:17:57 [error]:  - []
+2023-06-16 08:19:25 [debug]:  - running at http://:::9120
+2023-06-16 08:20:33 [debug]:  - running at http://:::9120
+2023-06-16 08:20:38 [debug]:  - running at http://:::9120
+2023-06-16 08:20:42 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 08:20:42 [debug]:  - Connection acquired from connection pool...Connection 252 acquired
+2023-06-16 08:20:42 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 08:20:42 [debug]:  - Connection 252 is released back to the pool
+2023-06-16 08:21:20 [debug]:  - Connection acquired from connection pool...Connection 252 acquired
+2023-06-16 08:21:20 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = '6fc732a0-0c0c-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 08:21:20 [debug]:  - Connection 252 is released back to the pool
+2023-06-16 08:21:20 [debug]:  - Connection acquired from connection pool...Connection 252 acquired
+2023-06-16 08:21:20 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.HTTPMethod AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.AccountId = ACC.AccountId
+        WHERE 1 AND accountId = '6fc73267-0c0c-11ee-855e-28d244d1c460';
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.AccountId = ACC.AccountId
+          WHERE 1 AND accountId = '6fc73267-0c0c-11ee-855e-28d244d1c460') AS TBL;
+2023-06-16 08:21:20 [error]:  - ER_BAD_FIELD_ERROR: Unknown column 'DEST.HTTPMethod' in 'field list'
+2023-06-16 08:21:20 [debug]:  - Connection 252 is released back to the pool
+2023-06-16 08:21:20 [error]:  - []
+2023-06-16 08:21:20 [error]:  - []
+2023-06-16 08:22:14 [debug]:  - running at http://:::9120
+2023-06-16 08:22:18 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 08:22:18 [debug]:  - Connection acquired from connection pool...Connection 253 acquired
+2023-06-16 08:22:18 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = '6fc732a0-0c0c-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 08:22:18 [debug]:  - Connection 253 is released back to the pool
+2023-06-16 08:22:18 [debug]:  - Connection acquired from connection pool...Connection 253 acquired
+2023-06-16 08:22:18 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1 AND accountId = '6fc73267-0c0c-11ee-855e-28d244d1c460';
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1 AND accountId = '6fc73267-0c0c-11ee-855e-28d244d1c460') AS TBL;
+2023-06-16 08:22:18 [debug]:  - Connection 253 is released back to the pool
+2023-06-16 08:43:33 [debug]:  - running at http://:::9120
+2023-06-16 08:45:55 [debug]:  - running at http://:::9120
+2023-06-16 08:46:44 [debug]:  - running at http://:::9120
+2023-06-16 08:46:52 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 08:46:52 [debug]:  - Connection acquired from connection pool...Connection 258 acquired
+2023-06-16 08:46:52 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = '6fc732a0-0c0c-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 08:46:52 [debug]:  - Connection 258 is released back to the pool
+2023-06-16 08:46:52 [debug]:  - Connection acquired from connection pool...Connection 258 acquired
+2023-06-16 08:46:52 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1 AND accountId = '6fc73267-0c0c-11ee-855e-28d244d1c460';
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1 AND accountId = '6fc73267-0c0c-11ee-855e-28d244d1c460') AS TBL;
+2023-06-16 08:46:52 [debug]:  - Connection 258 is released back to the pool
+2023-06-16 08:47:41 [debug]:  - running at http://:::9120
+2023-06-16 08:48:05 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 08:48:05 [debug]:  - Connection acquired from connection pool...Connection 259 acquired
+2023-06-16 08:48:05 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 08:48:05 [debug]:  - Connection 259 is released back to the pool
+2023-06-16 08:48:26 [debug]:  - Connection acquired from connection pool...Connection 259 acquired
+2023-06-16 08:48:26 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = '6fc732a0-0c0c-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 08:48:26 [debug]:  - Connection 259 is released back to the pool
+2023-06-16 08:48:26 [debug]:  - Connection acquired from connection pool...Connection 259 acquired
+2023-06-16 08:48:26 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1 AND accountId = '6fc73267-0c0c-11ee-855e-28d244d1c460';
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1 AND accountId = '6fc73267-0c0c-11ee-855e-28d244d1c460') AS TBL;
+2023-06-16 08:48:26 [debug]:  - Connection 259 is released back to the pool
+2023-06-16 08:55:44 [debug]:  - running at http://:::9120
+2023-06-16 08:56:26 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 08:56:26 [debug]:  - Connection acquired from connection pool...Connection 272 acquired
+2023-06-16 08:56:26 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Accounts(AccountId,Name,Email,AppSecretId,Website,IsActive)
+        VALUES(UNHEX(REPLACE(UUID(),"-","")),"John's Account","john.doe@account1.com",
+        UNHEX(REPLACE(UUID(),"-","")),"https://www.account1.com",1);
+2023-06-16 08:56:26 [debug]:  - Connection 272 is released back to the pool
+2023-06-16 08:56:31 [debug]:  - Connection acquired from connection pool...Connection 272 acquired
+2023-06-16 08:56:31 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 08:56:31 [debug]:  - Connection 272 is released back to the pool
+2023-06-16 09:00:11 [debug]:  - Connection acquired from connection pool...Connection 272 acquired
+2023-06-16 09:00:11 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 09:00:11 [debug]:  - Connection 272 is released back to the pool
+2023-06-16 09:00:11 [debug]:  - Connection acquired from connection pool...Connection 272 acquired
+2023-06-16 09:00:12 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Destinations(Url,Method,Headers,FK_AccountId)
+        VALUES('http://localhost:9120/api/destinations/destination1','POST',
+        '{"APP_ID":"1234APPID1234","APP_SECRET":"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s","ACTION":"user.update","Content-Type":"application/json","Accept":"*/*"}',UNHEX(REPLACE("ad581c89-0c23-11ee-855e-28d244d1c460","-","")));
+2023-06-16 09:00:12 [debug]:  - Connection 272 is released back to the pool
+2023-06-16 09:00:17 [debug]:  - Connection acquired from connection pool...Connection 272 acquired
+2023-06-16 09:00:17 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1) AS TBL;
+2023-06-16 09:00:17 [debug]:  - Connection 272 is released back to the pool
+2023-06-16 09:01:48 [debug]:  - Connection acquired from connection pool...Connection 272 acquired
+2023-06-16 09:01:48 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 09:01:48 [debug]:  - Connection 272 is released back to the pool
+2023-06-16 09:01:48 [debug]:  - Connection acquired from connection pool...Connection 272 acquired
+2023-06-16 09:01:48 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Destinations(Url,Method,Headers,FK_AccountId)
+        VALUES('http://localhost:9120/api/destinations/destination1','POST',
+        '{"APP_ID":"1234APPID1234","APP_SECRET":"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s","ACTION":"user.update","Content-Type":"application/json","Accept":"*/*"}',UNHEX(REPLACE("ad581c89-0c23-11ee-855e-28d244d1c460","-","")));
+2023-06-16 09:01:48 [debug]:  - Connection 272 is released back to the pool
+2023-06-16 09:01:52 [debug]:  - Connection acquired from connection pool...Connection 272 acquired
+2023-06-16 09:01:53 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1) AS TBL;
+2023-06-16 09:01:53 [debug]:  - Connection 272 is released back to the pool
+2023-06-16 09:31:01 [debug]:  - Connection acquired from connection pool...Connection 272 acquired
+2023-06-16 09:31:01 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1) AS TBL;
+2023-06-16 09:31:01 [debug]:  - Connection 272 is released back to the pool
+2023-06-16 09:55:30 [debug]:  - running at http://:::9120
+2023-06-16 09:56:25 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 09:56:25 [debug]:  - Connection acquired from connection pool...Connection 325 acquired
+2023-06-16 09:56:25 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 09:56:25 [debug]:  - Connection 325 is released back to the pool
+2023-06-16 09:56:25 [debug]:  - Connection acquired from connection pool...Connection 325 acquired
+2023-06-16 09:56:25 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1 AND accountId = 'ad581c89-0c23-11ee-855e-28d244d1c460';
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1 AND accountId = 'ad581c89-0c23-11ee-855e-28d244d1c460') AS TBL;
+2023-06-16 09:56:25 [debug]:  - Connection 325 is released back to the pool
+2023-06-16 09:56:37 [debug]:  - Connection acquired from connection pool...Connection 325 acquired
+2023-06-16 09:56:37 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT Data FROM Datas 
+        WHERE Datas.FK_DestId = 1;
+2023-06-16 09:56:37 [error]:  - ER_NO_SUCH_TABLE: Table 'datapusher.datas' doesn't exist
+2023-06-16 09:56:37 [debug]:  - Connection 325 is released back to the pool
+2023-06-16 09:56:37 [error]:  - []
+2023-06-16 09:56:37 [error]:  - []
+2023-06-16 09:58:15 [debug]:  - Connection acquired from connection pool...Connection 325 acquired
+2023-06-16 09:58:15 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 09:58:15 [debug]:  - Connection 325 is released back to the pool
+2023-06-16 09:58:15 [debug]:  - Connection acquired from connection pool...Connection 325 acquired
+2023-06-16 09:58:15 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1 AND accountId = 'ad581c89-0c23-11ee-855e-28d244d1c460';
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1 AND accountId = 'ad581c89-0c23-11ee-855e-28d244d1c460') AS TBL;
+2023-06-16 09:58:15 [debug]:  - Connection 325 is released back to the pool
+2023-06-16 09:58:21 [debug]:  - Connection acquired from connection pool...Connection 325 acquired
+2023-06-16 09:58:21 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT Data FROM Datas 
+        WHERE Datas.FK_DestId = 1;
+2023-06-16 09:58:21 [debug]:  - Connection 325 is released back to the pool
+2023-06-16 09:58:21 [error]:  - {}
+2023-06-16 09:58:21 [error]:  - {}
+2023-06-16 09:59:21 [debug]:  - running at http://:::9120
+2023-06-16 09:59:30 [debug]:  - running at http://:::9120
+2023-06-16 09:59:47 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 09:59:47 [debug]:  - Connection acquired from connection pool...Connection 342 acquired
+2023-06-16 09:59:47 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT Data FROM Datas 
+        WHERE Datas.FK_DestId = 1;
+2023-06-16 09:59:47 [debug]:  - Connection 342 is released back to the pool
+2023-06-16 09:59:47 [error]:  - {}
+2023-06-16 09:59:47 [error]:  - {}
+2023-06-16 09:59:50 [debug]:  - Connection acquired from connection pool...Connection 342 acquired
+2023-06-16 09:59:50 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 09:59:50 [debug]:  - Connection 342 is released back to the pool
+2023-06-16 09:59:50 [debug]:  - Connection acquired from connection pool...Connection 342 acquired
+2023-06-16 09:59:50 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1 AND accountId = 'ad581c89-0c23-11ee-855e-28d244d1c460';
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1 AND accountId = 'ad581c89-0c23-11ee-855e-28d244d1c460') AS TBL;
+2023-06-16 09:59:50 [debug]:  - Connection 342 is released back to the pool
+2023-06-16 10:00:22 [debug]:  - Connection acquired from connection pool...Connection 342 acquired
+2023-06-16 10:00:22 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:00:22 [debug]:  - Connection 342 is released back to the pool
+2023-06-16 10:02:21 [debug]:  - running at http://:::9120
+2023-06-16 10:02:29 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:02:29 [debug]:  - Connection acquired from connection pool...Connection 343 acquired
+2023-06-16 10:02:29 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:02:29 [debug]:  - Connection 343 is released back to the pool
+2023-06-16 10:02:29 [debug]:  - Connection acquired from connection pool...Connection 343 acquired
+2023-06-16 10:02:29 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1 AND accountId = 'ad581c89-0c23-11ee-855e-28d244d1c460';
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1 AND accountId = 'ad581c89-0c23-11ee-855e-28d244d1c460') AS TBL;
+2023-06-16 10:02:29 [debug]:  - Connection 343 is released back to the pool
+2023-06-16 10:08:27 [debug]:  - running at http://:::9120
+2023-06-16 10:08:54 [debug]:  - running at http://:::9120
+2023-06-16 10:09:01 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:09:01 [debug]:  - Connection acquired from connection pool...Connection 352 acquired
+2023-06-16 10:09:01 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:09:01 [debug]:  - Connection 352 is released back to the pool
+2023-06-16 10:09:01 [debug]:  - Connection acquired from connection pool...Connection 352 acquired
+2023-06-16 10:09:01 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.FK_AccountId), 8), '-',MID(HEX(ACC.FK_AccountId), 9, 4), 
+    '-',MID(HEX(ACC.FK_AccountId), 13, 4), '-',MID(HEX(ACC.FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.FK_AccountId), 12))) = 'ad581c89-0c23-11ee-855e-28d244d1c460'
+    FROM Destinations AS DEST;
+2023-06-16 10:09:01 [error]:  - ER_BAD_FIELD_ERROR: Unknown column 'ACC.FK_AccountId' in 'field list'
+2023-06-16 10:09:01 [debug]:  - Connection 352 is released back to the pool
+2023-06-16 10:09:01 [error]:  - []
+2023-06-16 10:09:01 [error]:  - []
+2023-06-16 10:09:20 [debug]:  - running at http://:::9120
+2023-06-16 10:09:26 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:09:26 [debug]:  - Connection acquired from connection pool...Connection 353 acquired
+2023-06-16 10:09:26 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:09:26 [debug]:  - Connection 353 is released back to the pool
+2023-06-16 10:09:26 [debug]:  - Connection acquired from connection pool...Connection 353 acquired
+2023-06-16 10:09:26 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = 'ad581c89-0c23-11ee-855e-28d244d1c460'
+    FROM Destinations AS DEST;
+2023-06-16 10:09:26 [debug]:  - Connection 353 is released back to the pool
+2023-06-16 10:09:26 [error]:  - {}
+2023-06-16 10:09:26 [error]:  - {}
+2023-06-16 10:09:56 [debug]:  - running at http://:::9120
+2023-06-16 10:09:58 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:09:58 [debug]:  - Connection acquired from connection pool...Connection 354 acquired
+2023-06-16 10:09:58 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:09:58 [debug]:  - Connection 354 is released back to the pool
+2023-06-16 10:09:58 [debug]:  - Connection acquired from connection pool...Connection 354 acquired
+2023-06-16 10:09:58 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = 'ad581c89-0c23-11ee-855e-28d244d1c460'
+    FROM Destinations AS DEST;
+2023-06-16 10:09:58 [error]:  - ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM Destinations AS DEST' at line 4
+2023-06-16 10:09:58 [debug]:  - Connection 354 is released back to the pool
+2023-06-16 10:09:58 [error]:  - []
+2023-06-16 10:09:58 [error]:  - []
+2023-06-16 10:10:31 [debug]:  - running at http://:::9120
+2023-06-16 10:10:34 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:10:34 [debug]:  - Connection acquired from connection pool...Connection 355 acquired
+2023-06-16 10:10:34 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:10:34 [debug]:  - Connection 355 is released back to the pool
+2023-06-16 10:10:34 [debug]:  - Connection acquired from connection pool...Connection 355 acquired
+2023-06-16 10:10:34 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = 'ad581c89-0c23-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:10:34 [debug]:  - Connection 355 is released back to the pool
+2023-06-16 10:10:34 [error]:  - {}
+2023-06-16 10:10:34 [error]:  - {}
+2023-06-16 10:12:25 [debug]:  - running at http://:::9120
+2023-06-16 10:12:28 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:12:28 [debug]:  - Connection acquired from connection pool...Connection 356 acquired
+2023-06-16 10:12:28 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:12:28 [debug]:  - Connection 356 is released back to the pool
+2023-06-16 10:12:28 [debug]:  - Connection acquired from connection pool...Connection 356 acquired
+2023-06-16 10:12:28 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = 'ad581c89-0c23-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:12:28 [debug]:  - Connection 356 is released back to the pool
+2023-06-16 10:12:28 [error]:  - {}
+2023-06-16 10:12:28 [error]:  - {}
+2023-06-16 10:13:24 [debug]:  - running at http://:::9120
+2023-06-16 10:13:28 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:13:28 [debug]:  - Connection acquired from connection pool...Connection 357 acquired
+2023-06-16 10:13:28 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:13:28 [debug]:  - Connection 357 is released back to the pool
+2023-06-16 10:13:28 [debug]:  - Connection acquired from connection pool...Connection 357 acquired
+2023-06-16 10:13:28 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,DEST.Url AS url,
+    DEST.Method AS method,DEST.Headers AS headers FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = 'ad581c89-0c23-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:13:28 [debug]:  - Connection 357 is released back to the pool
+2023-06-16 10:13:28 [error]:  - {}
+2023-06-16 10:13:28 [error]:  - {}
+2023-06-16 10:14:30 [debug]:  - running at http://:::9120
+2023-06-16 10:14:44 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:14:44 [debug]:  - Connection acquired from connection pool...Connection 358 acquired
+2023-06-16 10:14:44 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:14:44 [debug]:  - Connection 358 is released back to the pool
+2023-06-16 10:14:44 [debug]:  - Connection acquired from connection pool...Connection 358 acquired
+2023-06-16 10:14:44 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,DEST.Url AS url,
+    DEST.Method AS method,DEST.Headers AS headers FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = 'ad581c89-0c23-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:14:44 [debug]:  - Connection 358 is released back to the pool
+2023-06-16 10:14:44 [error]:  - {}
+2023-06-16 10:14:44 [error]:  - {}
+2023-06-16 10:16:26 [debug]:  - running at http://:::9120
+2023-06-16 10:16:31 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:16:31 [debug]:  - Connection acquired from connection pool...Connection 363 acquired
+2023-06-16 10:16:31 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:16:31 [debug]:  - Connection 363 is released back to the pool
+2023-06-16 10:16:31 [debug]:  - Connection acquired from connection pool...Connection 363 acquired
+2023-06-16 10:16:31 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,DEST.Url AS url,
+    DEST.Method AS method,DEST.Headers AS headers FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = 'ad581c89-0c23-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:16:31 [debug]:  - Connection 363 is released back to the pool
+2023-06-16 10:16:31 [error]:  - {}
+2023-06-16 10:16:31 [error]:  - {}
+2023-06-16 10:16:52 [debug]:  - running at http://:::9120
+2023-06-16 10:16:55 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:16:55 [debug]:  - Connection acquired from connection pool...Connection 364 acquired
+2023-06-16 10:16:56 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:16:56 [debug]:  - Connection 364 is released back to the pool
+2023-06-16 10:16:56 [debug]:  - Connection acquired from connection pool...Connection 364 acquired
+2023-06-16 10:16:56 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,DEST.Url AS url,
+    DEST.Method AS method,DEST.Headers AS headers FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = 'ad581c89-0c23-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:16:56 [debug]:  - Connection 364 is released back to the pool
+2023-06-16 10:16:56 [error]:  - {}
+2023-06-16 10:16:56 [error]:  - {}
+2023-06-16 10:18:11 [debug]:  - running at http://:::9120
+2023-06-16 10:18:14 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:18:14 [debug]:  - Connection acquired from connection pool...Connection 367 acquired
+2023-06-16 10:18:14 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:18:14 [debug]:  - Connection 367 is released back to the pool
+2023-06-16 10:18:14 [debug]:  - Connection acquired from connection pool...Connection 367 acquired
+2023-06-16 10:18:14 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,DEST.Url AS url,
+    DEST.Method AS method,DEST.Headers AS headers FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = 'ad581c89-0c23-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:18:14 [debug]:  - Connection 367 is released back to the pool
+2023-06-16 10:18:14 [debug]:  - Connection acquired from connection pool...Connection 367 acquired
+2023-06-16 10:18:14 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:18:14 [debug]:  - Connection 367 is released back to the pool
+2023-06-16 10:18:14 [debug]:  - Connection acquired from connection pool...Connection 367 acquired
+2023-06-16 10:18:14 [debug]:  - AssetServiceDAO :: inserting data ,Query : INSERT INTO Datas(Data,FK_DestId) VALUES('[object Object]',1)
+2023-06-16 10:18:14 [debug]:  - Connection 367 is released back to the pool
+2023-06-16 10:19:12 [debug]:  - running at http://:::9120
+2023-06-16 10:19:23 [debug]:  - running at http://:::9120
+2023-06-16 10:19:27 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:19:27 [debug]:  - Connection acquired from connection pool...Connection 380 acquired
+2023-06-16 10:19:27 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:19:27 [debug]:  - Connection 380 is released back to the pool
+2023-06-16 10:19:27 [debug]:  - Connection acquired from connection pool...Connection 380 acquired
+2023-06-16 10:19:27 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,DEST.Url AS url,
+    DEST.Method AS method,DEST.Headers AS headers FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = 'ad581c89-0c23-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:19:27 [debug]:  - Connection 380 is released back to the pool
+2023-06-16 10:19:27 [debug]:  - Connection acquired from connection pool...Connection 380 acquired
+2023-06-16 10:19:27 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:19:27 [debug]:  - Connection 380 is released back to the pool
+2023-06-16 10:19:27 [debug]:  - Connection acquired from connection pool...Connection 380 acquired
+2023-06-16 10:19:27 [debug]:  - AssetServiceDAO :: inserting data ,Query : INSERT INTO Datas(Data,FK_DestId) VALUES('{"name":"John Doe","age":30}',1)
+2023-06-16 10:19:27 [debug]:  - Connection 380 is released back to the pool
+2023-06-16 10:19:50 [debug]:  - Connection acquired from connection pool...Connection 380 acquired
+2023-06-16 10:19:50 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT Data FROM Datas 
+        WHERE Datas.FK_DestId = 1;
+2023-06-16 10:19:50 [debug]:  - Connection 380 is released back to the pool
+2023-06-16 10:19:50 [error]:  - {}
+2023-06-16 10:19:50 [error]:  - {}
+2023-06-16 10:20:47 [debug]:  - running at http://:::9120
+2023-06-16 10:20:49 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:20:49 [debug]:  - Connection acquired from connection pool...Connection 393 acquired
+2023-06-16 10:20:49 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT Data FROM Datas 
+        WHERE Datas.FK_DestId = 1;
+2023-06-16 10:20:49 [debug]:  - Connection 393 is released back to the pool
+2023-06-16 10:20:49 [error]:  - {}
+2023-06-16 10:20:49 [error]:  - {}
+2023-06-16 10:21:26 [debug]:  - running at http://:::9120
+2023-06-16 10:21:30 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:21:30 [debug]:  - Connection acquired from connection pool...Connection 394 acquired
+2023-06-16 10:21:30 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT Data FROM Datas 
+        WHERE Datas.FK_DestId = 1;
+2023-06-16 10:21:30 [debug]:  - Connection 394 is released back to the pool
+2023-06-16 10:21:30 [error]:  - {}
+2023-06-16 10:21:30 [error]:  - {}
+2023-06-16 10:22:00 [debug]:  - Connection acquired from connection pool...Connection 394 acquired
+2023-06-16 10:22:01 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT Data FROM Datas 
+        WHERE Datas.FK_DestId = 1;
+2023-06-16 10:22:01 [debug]:  - Connection 394 is released back to the pool
+2023-06-16 10:24:43 [debug]:  - Connection acquired from connection pool...Connection 394 acquired
+2023-06-16 10:24:44 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Accounts(AccountId,Name,Email,AppSecretId,Website,IsActive)
+        VALUES(UNHEX(REPLACE(UUID(),"-","")),"Sam's Account","sam.john@account1.com",
+        UNHEX(REPLACE(UUID(),"-","")),"https://www.account2.com",1);
+2023-06-16 10:24:44 [debug]:  - Connection 394 is released back to the pool
+2023-06-16 10:24:48 [debug]:  - Connection acquired from connection pool...Connection 394 acquired
+2023-06-16 10:24:48 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:24:48 [debug]:  - Connection 394 is released back to the pool
+2023-06-16 10:26:10 [debug]:  - Connection acquired from connection pool...Connection 394 acquired
+2023-06-16 10:26:10 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:26:10 [debug]:  - Connection 394 is released back to the pool
+2023-06-16 10:26:10 [debug]:  - Connection acquired from connection pool...Connection 394 acquired
+2023-06-16 10:26:10 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Destinations(Url,Method,Headers,FK_AccountId)
+        VALUES('http://example2.api','POST',
+        '{"APP_ID":"1234APPID1234","APP_SECRET":"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s","ACTION":"user.update","Content-Type":"application/json","Accept":"*/*"}',UNHEX(REPLACE("018093b0-0c30-11ee-855e-28d244d1c460","-","")));
+2023-06-16 10:26:10 [debug]:  - Connection 394 is released back to the pool
+2023-06-16 10:26:42 [debug]:  - running at http://:::9120
+2023-06-16 10:26:49 [debug]:  - **** New MySQL connection is made ****
+2023-06-16 10:26:49 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:26:49 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:26:49 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:26:49 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:26:50 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Destinations(Url,Method,Headers,FK_AccountId)
+        VALUES('http://example3.api','POST',
+        '{"APP_ID":"1234APPID1234","APP_SECRET":"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s","ACTION":"user.update","Content-Type":"application/json","Accept":"*/*"}',UNHEX(REPLACE("018093b0-0c30-11ee-855e-28d244d1c460","-","")));
+2023-06-16 10:26:50 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:26:59 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:26:59 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1) AS TBL;
+2023-06-16 10:26:59 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:27:35 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:27:35 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = 'ad581cb8-0c23-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:27:35 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:27:36 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:27:36 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,DEST.Url AS url,
+    DEST.Method AS method,DEST.Headers AS headers FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = 'ad581c89-0c23-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:27:36 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:27:36 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:27:36 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:27:36 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:27:36 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:27:36 [debug]:  - AssetServiceDAO :: inserting data ,Query : INSERT INTO Datas(Data,FK_DestId) VALUES('{"name":"Sam","age":43}',1)
+2023-06-16 10:27:36 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:28:09 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:28:09 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT Data FROM Datas 
+        WHERE Datas.FK_DestId = 1;
+2023-06-16 10:28:09 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:29:13 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:29:13 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = '01809401-0c30-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:29:13 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:29:13 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:29:13 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,DEST.Url AS url,
+    DEST.Method AS method,DEST.Headers AS headers FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = '018093b0-0c30-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:29:13 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:29:13 [error]:  - "error"
+2023-06-16 10:29:13 [error]:  - "error"
+2023-06-16 10:30:47 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:30:47 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:30:47 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:30:47 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:30:47 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Destinations(Url,Method,Headers,FK_AccountId)
+        VALUES('https://api.example1.com/endpoint','POST',
+        '{"APP_ID":"1234APPID1234","APP_SECRET":"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s","ACTION":"user.update","Content-Type":"application/json","Accept":"*/*"}',UNHEX(REPLACE("018093b0-0c30-11ee-855e-28d244d1c460","-","")));
+2023-06-16 10:30:47 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:31:27 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:31:27 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:31:27 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:31:27 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:31:27 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Destinations(Url,Method,Headers,FK_AccountId)
+        VALUES('https://api.example2.com/endpoint','POST',
+        '{"APP_ID":"1234APPID1234","APP_SECRET":"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s","ACTION":"user.update","Content-Type":"application/json","Accept":"*/*"}',UNHEX(REPLACE("018093b0-0c30-11ee-855e-28d244d1c460","-","")));
+2023-06-16 10:31:27 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:31:32 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:31:32 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:31:32 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:31:32 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:31:32 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Destinations(Url,Method,Headers,FK_AccountId)
+        VALUES('https://api.example3.com/endpoint','POST',
+        '{"APP_ID":"1234APPID1234","APP_SECRET":"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s","ACTION":"user.update","Content-Type":"application/json","Accept":"*/*"}',UNHEX(REPLACE("018093b0-0c30-11ee-855e-28d244d1c460","-","")));
+2023-06-16 10:31:32 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:31:49 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:31:49 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = '01809401-0c30-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:31:49 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:31:49 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:31:49 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,DEST.Url AS url,
+    DEST.Method AS method,DEST.Headers AS headers FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = '018093b0-0c30-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:31:49 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:31:50 [error]:  - "error"
+2023-06-16 10:31:50 [error]:  - "error"
+2023-06-16 10:32:40 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:32:40 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1) AS TBL;
+2023-06-16 10:32:40 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:33:23 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:33:23 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Accounts(AccountId,Name,Email,AppSecretId,Website,IsActive)
+        VALUES(UNHEX(REPLACE(UUID(),"-","")),"Sam's Account","sam.john@account1.com",
+        UNHEX(REPLACE(UUID(),"-","")),"https://www.account2.com",1);
+2023-06-16 10:33:23 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:33:46 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:33:46 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Accounts(AccountId,Name,Email,AppSecretId,Website,IsActive)
+        VALUES(UNHEX(REPLACE(UUID(),"-","")),"Doe's Account","doe.john@account1.com",
+        UNHEX(REPLACE(UUID(),"-","")),"https://www.account3.com",1);
+2023-06-16 10:33:46 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:33:50 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:33:50 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:33:50 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:34:31 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:34:31 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:34:31 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:34:31 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:34:31 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Destinations(Url,Method,Headers,FK_AccountId)
+        VALUES('http://localhost:9120/api/destinations/1','POST',
+        '{"APP_ID":"1234APPID1234","APP_SECRET":"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s","ACTION":"user.update","Content-Type":"application/json","Accept":"*/*"}',UNHEX(REPLACE("449f7c2d-0c31-11ee-855e-28d244d1c460","-","")));
+2023-06-16 10:34:31 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:34:38 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:34:38 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:34:38 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:34:38 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:34:38 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Destinations(Url,Method,Headers,FK_AccountId)
+        VALUES('http://localhost:9120/api/destinations/2','POST',
+        '{"APP_ID":"1234APPID1234","APP_SECRET":"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s","ACTION":"user.update","Content-Type":"application/json","Accept":"*/*"}',UNHEX(REPLACE("449f7c2d-0c31-11ee-855e-28d244d1c460","-","")));
+2023-06-16 10:34:38 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:34:42 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:34:42 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1) AS TBL;
+2023-06-16 10:34:42 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:35:21 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:35:21 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = '449f7c5d-0c31-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:35:21 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:35:21 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:35:21 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,DEST.Url AS url,
+    DEST.Method AS method,DEST.Headers AS headers FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = '449f7c2d-0c31-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:35:21 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:35:21 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:35:21 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:35:21 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:35:21 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:35:21 [debug]:  - AssetServiceDAO :: inserting data ,Query : INSERT INTO Datas(Data,FK_DestId) VALUES('{"name":"Doe","age":43}',1)
+2023-06-16 10:35:21 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:35:21 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:35:21 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:35:21 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:35:21 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:35:21 [debug]:  - AssetServiceDAO :: inserting data ,Query : INSERT INTO Datas(Data,FK_DestId) VALUES('{"name":"Doe","age":43}',2)
+2023-06-16 10:35:21 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:35:29 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:35:29 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT Data FROM Datas 
+        WHERE Datas.FK_DestId = 1;
+2023-06-16 10:35:29 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:35:34 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:35:34 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT Data FROM Datas 
+        WHERE Datas.FK_DestId = 2;
+2023-06-16 10:35:34 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:36:59 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:36:59 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT Data FROM Datas 
+        WHERE Datas.FK_DestId = 2;
+2023-06-16 10:36:59 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:37:13 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:37:13 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,DEST.Url AS url,
+    DEST.Method AS httpMethod,DEST.Headers AS headers
+    FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+        WHERE 1;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT DEST.Id
+          FROM Destinations AS DEST 
+    LEFT JOIN Accounts AS ACC ON DEST.FK_AccountId = ACC.AccountId
+          WHERE 1) AS TBL;
+2023-06-16 10:37:13 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:37:24 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:37:24 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:37:24 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:37:48 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:37:48 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:37:48 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:37:48 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:37:48 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Destinations(Url,Method,Headers,FK_AccountId)
+        VALUES('http://localhost:9120/api/destinations/3','POST',
+        '{"APP_ID":"1234APPID1234","APP_SECRET":"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s","ACTION":"user.update","Content-Type":"application/json","Accept":"*/*"}',UNHEX(REPLACE("3767122a-0c31-11ee-855e-28d244d1c460","-","")));
+2023-06-16 10:37:48 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:37:52 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:37:52 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:37:52 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:37:52 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:37:52 [debug]:  - AssetServiceDAO :: New Account Created ,Query : INSERT INTO Destinations(Url,Method,Headers,FK_AccountId)
+        VALUES('http://localhost:9120/api/destinations/4','POST',
+        '{"APP_ID":"1234APPID1234","APP_SECRET":"enwdj3bshwer43bjhjs9ereuinkjcnsiurew8s","ACTION":"user.update","Content-Type":"application/json","Accept":"*/*"}',UNHEX(REPLACE("3767122a-0c31-11ee-855e-28d244d1c460","-","")));
+2023-06-16 10:37:52 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:38:01 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:38:01 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = '449f7c5d-0c31-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:38:01 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:38:01 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:38:01 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,DEST.Url AS url,
+    DEST.Method AS method,DEST.Headers AS headers FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = '449f7c2d-0c31-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:38:01 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:38:01 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:38:01 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:38:01 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:38:01 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:38:01 [debug]:  - AssetServiceDAO :: inserting data ,Query : INSERT INTO Datas(Data,FK_DestId) VALUES('{"name":"Sam","age":23}',1)
+2023-06-16 10:38:01 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:38:01 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:38:01 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:38:01 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:38:01 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:38:01 [debug]:  - AssetServiceDAO :: inserting data ,Query : INSERT INTO Datas(Data,FK_DestId) VALUES('{"name":"Sam","age":23}',2)
+2023-06-16 10:38:01 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:38:55 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:38:55 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) AS appSecretToken
+    FROM Accounts AS ACC
+        WHERE LOWER(CONCAT(LEFT(HEX(ACC.AppSecretId), 8), '-',MID(HEX(ACC.AppSecretId), 9, 4), 
+    '-',MID(HEX(ACC.AppSecretId), 13, 4), '-',MID(HEX(ACC.AppSecretId), 17, 4), '-',
+    RIGHT(HEX(ACC.AppSecretId), 12))) = '37671270-0c31-11ee-855e-28d244d1c460' AND IsActive = 1;
+2023-06-16 10:38:55 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:38:55 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:38:55 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT DISTINCT DEST.Id AS destinationId,DEST.Url AS url,
+    DEST.Method AS method,DEST.Headers AS headers FROM Destinations AS DEST 
+    WHERE LOWER(CONCAT(LEFT(HEX(FK_AccountId), 8), '-',MID(HEX(FK_AccountId), 9, 4), 
+    '-',MID(HEX(FK_AccountId), 13, 4), '-',MID(HEX(FK_AccountId), 17, 4), '-',
+    RIGHT(HEX(FK_AccountId), 12))) = '3767122a-0c31-11ee-855e-28d244d1c460'
+    ;
+2023-06-16 10:38:55 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:38:55 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:38:55 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:38:55 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:38:55 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:38:55 [debug]:  - AssetServiceDAO :: inserting data ,Query : INSERT INTO Datas(Data,FK_DestId) VALUES('{"name":"Sam","age":23}',3)
+2023-06-16 10:38:55 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:38:55 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:38:55 [debug]:  - AssetServiceDAO :: Get Account Details ,Query : SELECT DISTINCT LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS accountId,ACC.NAME AS accountName,ACC.Email AS email,LOWER(CONCAT(LEFT(HEX(ACC.AccountId), 8), '-',MID(HEX(ACC.AccountId), 9, 4), 
+    '-',MID(HEX(ACC.AccountId), 13, 4), '-',MID(HEX(ACC.AccountId), 17, 4), '-',
+    RIGHT(HEX(ACC.AccountId), 12))) AS appSecretId,ACC.Website AS website 
+    FROM Accounts AS ACC
+        WHERE IsActive = 1 ORDER BY ACC.InsertUtc DESC;
+        SELECT COUNT(*) AS TotalCount FROM (
+          SELECT DISTINCT ACC.AccountId
+          FROM Accounts AS ACC
+          WHERE IsActive = 1) AS TBL;
+2023-06-16 10:38:55 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:38:55 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:38:55 [debug]:  - AssetServiceDAO :: inserting data ,Query : INSERT INTO Datas(Data,FK_DestId) VALUES('{"name":"Sam","age":23}',4)
+2023-06-16 10:38:55 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:39:01 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:39:01 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT Data FROM Datas 
+        WHERE Datas.FK_DestId = 3;
+2023-06-16 10:39:01 [debug]:  - Connection 403 is released back to the pool
+2023-06-16 10:39:06 [debug]:  - Connection acquired from connection pool...Connection 403 acquired
+2023-06-16 10:39:06 [debug]:  - AssetServiceDAO :: Get Destination Details ,Query : SELECT Data FROM Datas 
+        WHERE Datas.FK_DestId = 4;
+2023-06-16 10:39:06 [debug]:  - Connection 403 is released back to the pool

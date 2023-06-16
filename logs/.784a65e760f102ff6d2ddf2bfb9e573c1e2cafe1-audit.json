@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\nizar\\node js\\DataPusher\\logs\\.784a65e760f102ff6d2ddf2bfb9e573c1e2cafe1-audit.json",
+    "files": [
+        {
+            "date": 1686894282594,
+            "name": "C:\\Users\\nizar\\node js\\DataPusher\\logs\\goose-resp-api-2023-06-16.log",
+            "hash": "3db47abac85b09670882db4bffbea81c21fb88cc8e2ecdf90cc04a4ff4cb17dd"
+        }
+    ],
+    "hashType": "sha256"
+}
