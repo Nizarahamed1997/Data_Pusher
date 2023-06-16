@@ -35,18 +35,6 @@ class QueryHelper {
     return query;
   }
 
-  public fetchVesselImoAndNameTable() {
-    let query = `SELECT * FROM ImoAndVesselName`;
-    return query;
-  }
-
-  public fetchUserRegister(adUserUid) {
-    let query = `SELECT LOWER(CONCAT(LEFT(HEX(UserUid), 8), '-',MID(HEX(UserUid), 9, 4), 
-    '-',MID(HEX(UserUid), 13, 4), '-',MID(HEX(UserUid), 17, 4), '-',
-    RIGHT(HEX(UserUid), 12))) AS userUid FROM Users WHERE AdUserUid = UNHEX(REPLACE("${adUserUid}","-",""));`;
-    return query;
-  }
-
   public deleteAccount(id) {
     let query = `UPDATE Accounts SET IsActive = 0 WHERE AccountId = UNHEX("${id}")`;
     return query;

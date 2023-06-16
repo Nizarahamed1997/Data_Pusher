@@ -36,13 +36,11 @@ class Controller {
         console.log(getDestinationData);
         for (let destination of getDestinationData) {
           await this.sendDataToDestination(destination, data);
-          console.log("************************&^&&^%&$^%$&");
           let insertDataQuery = queryHelper.insertDestinationData(
             destination["destinationId"],
             JSON.stringify(data)
           );
           await Utility.databaseQuery(insertDataQuery, "inserting data");
-          console.log("***********************************************");
         }
         return resolve({
           status: "success",
