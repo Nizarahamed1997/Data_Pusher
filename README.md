@@ -1,6 +1,6 @@
 # Data_Pusher
 
-Clone the repo and run npm install to add all the dependencies.
+Clone the repo and run npm install to add all the dependencies.  
 And to start : npm run dev:start
 The app will run on http://localhost:9120/api
 To test the apis,use this postman collection
